@@ -1,0 +1,735 @@
+@charset "utf-8";
+
+body {
+    background-color: #eae9e9;          /*背景色*/
+}
+
+/*ログイン画面入力フォームデザイン*/
+.login_form{
+    background-color: #ffffff;          /*背景色*/
+    box-shadow: 0 0 6px #b3b1b1;        /*影*/
+    width: 400px;                       /*横幅*/
+    padding-top: 20px;                  /*要素内の余白*/
+    padding-bottom: 20px;               /*要素内の余白*/
+}
+
+/*ログイン画面の会社のロゴデザイン*/
+.campany_logo{
+    text-align: center;                 /*中央揃え*/
+}
+.campany_logo img{
+    width:25%;                          /*画像サイズ*/
+}
+
+/*一行テキストボックスデザイン*/
+.form-text{
+    box-shadow: 0 0 0 1px #ccc inset;   /*影*/
+    height: 2.4em;                      /*縦幅*/
+    margin: 0 8px;                      /*要素回りの余白*/
+    border-radius: 4px;                 /*角に丸みをつける*/
+    border: none;                       /*枠線なし*/
+}
+
+/*一行テキストボックスフォーカス時*/
+.form-text:focus{
+    outline: 0;                                         /*輪郭*/
+    box-shadow: 0 0 0 2px rgb(33, 150, 243) inset;      /*影*/
+}
+
+/*目標金額入力欄デザイン*/
+.amount_form{
+    box-shadow: 0 0 0 1px #ccc inset;   /*影*/
+    height: 2.4em;                      /*縦幅*/
+    width: 110px;
+    border-radius: 4px;                 /*角に丸みをつける*/
+    border: none;                       /*枠線なし*/
+}
+
+/*目標金額入力欄フォーカス時*/
+.amount_form:focus{
+    outline: 0;                                         /*輪郭*/
+    box-shadow: 0 0 0 2px rgb(33, 150, 243) inset;      /*影*/
+}
+
+/*ログイン画面のボタンデザイン*/
+.login_button {
+    border-radius: 4px;                 /*角に丸みをつける*/
+    margin-top: 20px;                   /*要素周りの余白*/
+    margin-right: 5px;
+    padding-top: 5px;                   /*要素内の余白*/
+    padding-bottom: 5px;                /*要素内の余白*/
+    width: 100px;                       /*横幅*/
+    display: block;
+    letter-spacing: 0.05em;                                                         /*字間調整*/
+    font-size: 17px;                                                                /*文字サイズ*/
+    text-align: center;
+    color:white;
+    background: linear-gradient(#5fa9f7,#2590fb);
+    border-left: 1px solid #0080ff;
+    border-right: 1px solid #0080ff;
+    border-top: 1px solid #0080ff;
+    border-bottom: 1px solid #0080ff;
+    box-shadow: 0px 1px 1px rgb(255 255 255 / 46%) inset;
+}
+/*ボタンにカーソルを合わせた時*/
+.login_button:hover {
+    background:linear-gradient(to bottom, #59d0fb 0%, #59d0fb 100%);                  /*背景色*/
+    box-shadow: 0 0 0 1px #59d0fb inset;
+}
+
+/*画面上部のボタンデザイン*/
+.header_button {
+    border-radius: 4px;                 /*角に丸みをつける*/
+    margin-right: 2px;                  /*要素回りの余白*/
+    padding-top: 5px;                   /*要素内の余白*/
+    padding-bottom: 5px;                /*要素内の余白*/
+    height: 33px;                      /*縦幅*/
+    letter-spacing: 0.05em;                                                         /*字間調整*/                                                                   /*文字色*/
+    font-size: 15px;                                                                /*文字サイズ*/                                                         /*枠線の色*/
+    text-align: center;
+    color:white;
+    background: linear-gradient(#2072cb,#2072cb);
+    border-left: 1px solid #275287;
+    border-right: 1px solid #275287;
+    border-top: 1px solid #275287;
+    border-bottom: 1px solid #275287;
+    box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
+}
+/*ボタンにカーソルを合わせた時*/
+.header_button:hover {
+    background:linear-gradient(to bottom, #03A9F4 0%, #03A9F4 100%);                  /*背景色*/
+    box-shadow: 0 0 0 1px #03A9F4 inset;
+}
+
+/*四角のボタンデザイン*/
+.sikaku_button {
+    vertical-align: middle;             /*配置*/
+    border-radius: 2px;                 /*角に丸みをつける*/
+    padding-top: 2px;                   /*要素内の余白*/
+    padding-bottom: 2px;                /*要素内の余白*/
+    height: 25px;                      /*縦幅*/
+    letter-spacing: 0.05em;                                                         /*字間調整*/
+    box-shadow: 0 0 0 1px #ccc inset;                                               /*影*/
+    background: linear-gradient(to bottom, rgb(255 255 255) 0%, #b3b1b1 100%);        /*背景色*/
+    color: #000;                                                                    /*文字色*/
+    font-size: 14px;                                                                /*文字サイズ*/
+    border: none;                                                                   /*枠線なし*/
+}
+/*ボタンにカーソルを合わせた時*/
+.sikaku_button:hover {
+    background:linear-gradient(to bottom, #d9f4fe 0%, #d9f4fe 100%);                  /*背景色*/
+}
+
+/*ログイン画面タイトル*/
+.login_title{
+    color: rgb(33, 150, 243);           /*文字色*/
+    font-size: 35px;                    /*文字サイズ*/
+}
+
+/*フォーム項目名デザイン*/
+.login_form_itemname{
+    font-size: 14px;                    /*文字サイズ*/
+    margin-left: 8px;                   /*要素周りの余白*/
+}
+
+/*入力エラーメッセージデザイン*/
+.error_msg{
+    text-align: left;                   /*左寄せ*/
+    border-radius: 6px;                 /*角に丸みをつける*/
+    margin-top: 10px;                   /*要素周りの余白*/
+    margin-bottom: 5px;                 /*要素周りの余白*/
+    width: 90%;                         /*横幅*/
+    color: #ff0000;                     /*文字色*/
+    border:#ff0000 1px solid;           /*ボーダータイプとボーダーカラー*/
+    padding:10px;                       /*要素内の余白*/
+    font-size: 12px;                    /*文字サイズ*/
+}
+
+/*TOP画面背景デザイン*/
+.top_content_area{
+    background-color: white;            /*背景色*/
+    margin-top: 4px;                    /*要素周りの余白*/
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+    overflow: hidden;
+}
+.top_content_title{
+    font-size: 18px;
+    background: linear-gradient(#5fa9f7,#2590fb);
+    border-left: 1px solid #0080ff;
+    border-right: 1px solid #0080ff;
+    border-top: 1px solid #0080ff;
+    border-bottom: 1px solid #0080ff;
+    box-shadow: 0px 1px 1px rgb(255 255 255 / 46%) inset;
+    padding: 2px;
+    color: #FFF;
+    letter-spacing: 0.05em;
+}
+.top_content_subtitle{
+    margin: 4px;
+    border-radius: 5px;                 /*角に丸みをつける*/
+    font-size: 1.0em;                    /*文字サイズ*/
+    padding: 3px;
+    letter-spacing: 0.05em;                                                         /*字間調整*/                                                              /*文字サイズ*/
+    color:white;
+    background:linear-gradient(to bottom, #9a9898 0%, #4d4d4d 100%);        /*背景色*/
+    border-left: 1px solid #4d4d4d;
+    border-right: 1px solid #4d4d4d;
+    border-top: 1px solid #4d4d4d;
+    border-bottom: 1px solid #4d4d4d;
+    box-shadow: 0px 1px 1px rgb(255 255 255 / 46%) inset;    
+}
+
+/*画面上部デザイン*/
+.header{
+    height: 35px;                       /*縦幅*/
+    position: relative;                 /*配置*/
+}
+.header_left_content{
+    position: absolute;                 /*配置*/
+    left: 10px;                         
+}
+.header_right_content{
+    position: absolute;                 /*配置*/
+    right: 10px;
+    border-radius: 5px;                 /*角に丸みをつける*/
+    font-size: 16px;                    /*文字サイズ*/
+    padding: 3px;                       /*要素内の余白*/
+    height: 24px;                       /*縦幅*/
+    letter-spacing: 0.05em;                                                         /*字間調整*/                                                              /*文字サイズ*/
+    color:white;
+    background:linear-gradient(to bottom, #9a9898 0%, #4d4d4d 100%);        /*背景色*/
+    border-left: 1px solid #4d4d4d;
+    border-right: 1px solid #4d4d4d;
+    border-top: 1px solid #4d4d4d;
+    border-bottom: 1px solid #4d4d4d;
+    box-shadow: 0px 1px 1px rgb(255 255 255 / 46%) inset;
+}
+
+/*メインタイトルデザイン*/
+.main_title{
+    margin-left: 10px;                  /*要素周りの余白*/
+    border-radius: 5px;                 /*角に丸みをつける*/
+    font-size: 24px;                    /*文字サイズ*/
+    padding: 3px;                       /*要素内の余白*/
+    height: 33px;                       /*縦幅*/
+    width: 98%;                         /*横幅*/                                                       /*枠線の色*/
+    letter-spacing: 0.05em;                                                         /*字間調整*/
+    font-size: 22px;                                                                /*文字サイズ*/
+    color:white;
+    background: linear-gradient(#5fa9f7,#2590fb);
+    border-left: 1px solid #0080ff;
+    border-right: 1px solid #0080ff;
+    border-top: 1px solid #0080ff;
+    border-bottom: 1px solid #0080ff;
+    box-shadow: 0px 1px 1px rgb(255 255 255 / 46%) inset;
+}
+
+/*サブタイトルデザイン*/
+.sub_title{
+    margin-left: 10px;                  /*要素周りの余白*/
+    margin-top: 2px;                    /*要素周りの余白*/
+    border-radius: 5px;                 /*角に丸みをつける*/
+    font-size: 18px;                    /*文字サイズ*/
+    padding: 2px;                       /*要素内の余白*/
+    height: 27px;                       /*縦幅*/
+    width: 98%;                         /*横幅*/
+    letter-spacing: 0.05em;                                                         /*字間調整*/                                                              /*文字サイズ*/
+    color:white;
+    background:linear-gradient(to bottom, #9a9898 0%, #4d4d4d 100%);        /*背景色*/
+    border-left: 1px solid #4d4d4d;
+    border-right: 1px solid #4d4d4d;
+    border-top: 1px solid #4d4d4d;
+    border-bottom: 1px solid #4d4d4d;
+    box-shadow: 0px 1px 1px rgb(255 255 255 / 46%) inset;
+}
+/*TOP画面一覧表*/
+.top_list_scroll{
+    overflow: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: fit-content;
+}
+.top_list_scroll table{
+    margin: 0;
+    border-spacing: 0;
+    border-left: 1px solid #000;
+    border-top: 1px solid #000;
+}
+.top_list_scroll td{
+    white-space: nowrap;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.top_list_scroll th{
+    white-space: nowrap;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    background: linear-gradient(#e0efff,#69adf1);
+    font-family: "sans-serif";
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+/*一覧表デザイン*/
+.list_scroll{
+    overflow: auto;
+    max-width: 98%;
+    max-height: 70%;
+    width: fit-content;
+}
+.list_scroll table{
+    margin: 0;
+    border-spacing: 0;
+}
+.list_scroll tr{
+    height: 35px;
+}
+.list_scroll td{
+    white-space: nowrap;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+.list_scroll th{
+    white-space: nowrap;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    background: linear-gradient(#e0efff,#69adf1);
+    font-family: "sans-serif";
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 35px;
+}
+.list_scroll tr:first-child th{
+    border-top: 1px solid #000;
+}
+.list_scroll th:first-child{
+    border-left: 1px solid #000;
+}
+.list_scroll tr:first-child th:first-child{
+    z-index: 1;
+}
+
+.list_stripe{
+    background: #e0e0e0;          /*背景色*/
+}
+
+/*一覧表画面下部分デザイン*/
+.paging{
+    font-size: 18px;                    /*文字サイズ*/
+    width: 98%;                         /*横幅*/
+    margin-top: 10px;                   /*要素周りの余白*/
+}
+
+/*ページング部分デザイン*/
+.paging_num{
+    font-size: 15px;
+    text-decoration: none;
+    margin-right: 5px;                 /*要素周りの余白*/
+    border-radius: 4px;                 /*角に丸みをつける*/
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 7px;
+    padding-right: 7px;
+    height: 30px;
+    background:linear-gradient(to bottom, #f8f8f8 0%, #e1e1e1 100%);        /*背景色*/
+    border-left: 1px solid #d3d3d3;
+    border-right: 1px solid #d3d3d3;
+    border-top: 1px solid #d3d3d3;
+    border-bottom: 1px solid #d3d3d3;
+    box-shadow: 0px 1px 1px rgb(255 255 255 / 46%) inset;
+}
+.paging_num:hover{
+    background:#d9f4fe;                  /*背景色*/
+}
+
+.table_button{
+    vertical-align: middle; 
+    border-radius: 2px; 
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    margin-right: 1px;
+}
+.table_button:hover{
+    background:#d9f4fe;                  /*背景色*/
+}
+.table_disabled_button{
+    vertical-align: middle;
+    border-radius: 2px; 
+    border-left: 1px solid #d3d3d3;
+    border-right: 1px solid #d3d3d3;
+    border-top: 1px solid #d3d3d3;
+    border-bottom: 1px solid #d3d3d3;
+    margin-right: 1px;
+}
+
+/*表示件数デザイン*/
+.list_count{
+    margin-right: 40px;                 /*要素周りの余白*/
+}
+
+/*一覧表画面背景デザイン*/
+.list_content_area{
+    margin-left: 10px;                  /*要素周りの余白*/
+    background-color: white;            /*背景色*/
+    border-radius: 6px;                 /*角に丸みをつける*/
+    width: 98%;                         /*横幅*/
+    padding-top: 10px;                  /*要素内の余白*/
+    padding-left: 10px;                 /*要素内の余白*/
+}
+
+/*モーダルフォームデザイン*/
+.modal_body{
+    min-width: 655px;
+    background-color: white;
+    padding-left: 10px;                 /*要素内の余白*/
+    padding-bottom: 0px;                /*要素内の余白*/
+    border: solid 1px;                  /*枠線*/
+    border-color: #3e3d3d;              /*枠線の色*/    
+}
+
+/*モーダルタイトル*/
+.modal_title{
+    border-radius: 4px;                 /*角に丸みをつける*/
+    padding: 4px;
+    width: 98%px;                       /*横幅*/
+    height: 35px;
+    display: block;
+    letter-spacing: 0.05em;                                                         /*字間調整*/
+    font-size: 24px;                                                                /*文字サイズ*/
+    color:white;
+    background: linear-gradient(#5fa9f7,#2590fb);
+    border-left: 1px solid #0080ff;
+    border-right: 1px solid #0080ff;
+    border-top: 1px solid #0080ff;
+    border-bottom: 1px solid #0080ff;
+    box-shadow: 0px 1px 1px rgb(255 255 255 / 46%) inset;
+}
+
+/*モーダル画面のボタンデザイン*/
+.modal_button_area {
+    display:flex;
+    /*justify-content: flex-end;*/
+}
+.modal_button {
+    border-radius: 4px;                 /*角に丸みをつける*/
+    margin-top: 20px;                   /*要素周りの余白*/
+    margin-right: 5px;
+    padding-top: 5px;                   /*要素内の余白*/
+    padding-bottom: 5px;                /*要素内の余白*/
+    width: 100px;                       /*横幅*/
+    display: block;
+    letter-spacing: 0.05em;                                                         /*字間調整*/
+    font-size: 15px;                                                                /*文字サイズ*/
+    text-align: center;
+    color:white;
+    background: linear-gradient(#5fa9f7,#2590fb);
+    border-left: 1px solid #0080ff;
+    border-right: 1px solid #0080ff;
+    border-top: 1px solid #0080ff;
+    border-bottom: 1px solid #0080ff;
+    box-shadow: 0px 1px 1px rgb(255 255 255 / 46%) inset;
+}
+/*ボタンにカーソルを合わせた時*/
+.modal_button:hover {
+    background:linear-gradient(to bottom, #59d0fb 0%, #59d0fb 100%);                  /*背景色*/
+    box-shadow: 0 0 0 1px #59d0fb inset;
+}
+
+/*入力フォームデザイン*/
+.form_table{
+    background-color: white;        /*背景色*/
+    border-collapse:  collapse;     /* セルの線を重ねる */
+    font-size: 15px;                /*文字サイズ*/   
+    margin-top: 1px;               /*要素周りの余白*/
+}
+.form_table td{
+    border: solid 3px;                  /*枠線*/
+    border-color: white;              /*枠線の色*/
+    height: 37px;                       /*縦幅*/
+}
+.form_item_name{
+    background-color: #b2ddff;         /*背景色*/
+    color: #132680;
+    text-align: center;                /*配置*/
+    width: 150px;                      /*横幅*/
+}
+
+/*プルダウンデザイン*/
+.pulldown{
+    box-shadow: 0 0 0 1px #ccc inset;   /*影*/
+    height: 2.4em;                      /*縦幅*/
+    margin: 0 8px;                      /*要素回りの余白*/
+    border-radius: 4px;                 /*角に丸みをつける*/
+    border: none;                       /*枠線なし*/    
+}
+.pulldown:focus{
+    outline: 0;                                         /*輪郭*/
+    box-shadow: 0 0 0 2px rgb(33, 150, 243) inset;      /*影*/
+}
+
+/*複数選択可能プルダウンデザイン*/
+.multiple_pulldown_nav{
+    box-shadow: 0 0 0 1px #ccc inset;   /*影*/
+    height: 2.4em;                      /*縦幅*/
+    margin: 0 8px;                      /*要素回りの余白*/
+    border-radius: 4px;                 /*角に丸みをつける*/
+    border: none;                       /*枠線なし*/        
+}
+.multiple_pulldown_box{
+    position: fixed;
+    display: none;
+    box-shadow: 0 0 0 1px #ccc inset;   /*影*/
+    background-color: white;
+    margin: 0 8px;                      /*要素回りの余白*/
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 4px;                 /*角に丸みをつける*/
+    border: none;                       /*枠線なし*/    
+    max-height: 150px;
+    overflow-y: scroll;
+}
+
+/*ユーザー編集画面パスワード入力欄*/
+.password_input{
+    display: none;
+}
+
+/*TOP週別スケジュールテーブルデザイン*/
+.week_schedule_table{
+    margin-left: 4px;
+    width: 99%;
+    height: calc(100% - 80px);
+    max-height: calc(100% - 80px);
+    overflow: hidden;
+}
+.week_schedule_table table{
+    font-size: 12px;
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+    table-layout: fixed;
+}
+.week_schedule_table td{
+    border:1px solid;
+    vertical-align: top;
+}
+.week_schedule_table th{
+    border:1px solid;
+    height: 25px;
+    background:linear-gradient(to bottom, #f8f8f8 0%, #e1e1e1 100%);        /*背景色*/
+    box-shadow: 0px 1px 1px rgb(255 255 255 / 46%) inset;
+}
+
+/*日曜日のデザイン*/
+.week_schedule_table .sunday{
+    background: linear-gradient(#FADBDA,#f15b5b);
+    box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
+}
+/*土曜日のデザイン*/
+.week_schedule_table .saturday{
+    background: linear-gradient(#e0efff,#69adf1);
+    box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
+}
+.schedule_content{
+    font-size: 12px;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 2px;
+    background-color:rgba(0,0,0,0);
+    border: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-radius: 4px;
+}
+.schedule_content:hover{
+    background-color: #c4defc;
+}
+
+/*月別スケジュールデザイン*/
+#month_schedule_area{
+    width: 100%;
+    height: calc(100% - 120px);
+}
+.month_schedule_area td{
+    text-align: left;
+    vertical-align: top;    
+}
+.monthschedule_side_title{
+    font-size: 16px;
+    background:linear-gradient(to bottom, #f8f8f8 0%, #e1e1e1 100%);    
+    border-left: 1px solid #b3b1b1;
+    border-right: 1px solid #b3b1b1;
+    border-top: 1px solid #b3b1b1;
+    border-bottom: 1px solid #b3b1b1;
+    box-shadow: 0px 1px 1px rgb(255 255 255 / 46%) inset;
+    padding: 2px;
+    color: black;
+    letter-spacing: 0.05em;
+    vertical-align: middle;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.monthschedule_side_area{
+    background-color: white;            /*背景色*/
+    width: 100%;
+    height: 100%;
+}
+#monthschedule_right_content{
+    height: 100px;
+}
+#monthschedule_left_content{
+    height: 100px;
+}
+.monthschedule_side_content{
+    width: 100%;
+    height: calc(100% - 45px);
+    overflow-y: scroll;
+}
+.monthschedule_calendar_table {
+    width: 100%;
+    background-color: white;
+    border-collapse: collapse;
+    table-layout: fixed;
+    overflow: hidden;
+}
+.monthschedule_calendar_table th{
+    border-left: 1px solid #b3b1b1;
+    border-right: 1px solid #b3b1b1;
+    border-top: 1px solid #b3b1b1;
+    border-bottom: 1px solid #b3b1b1;
+    height: 24px;
+    font-size: 13px;
+    background:linear-gradient(to bottom, #f8f8f8 0%, #e1e1e1 100%);        /*背景色*/
+    box-shadow: 0px 1px 1px rgb(255 255 255 / 46%) inset;
+}
+.monthschedule_calendar_table td{
+    border-left: 1px solid #b3b1b1;
+    border-right: 1px solid #b3b1b1;
+    border-top: 1px solid #b3b1b1;
+    border-bottom: 1px solid #b3b1b1;
+}
+.monthschedule_calendar_table .sunday{
+    background: linear-gradient(#FADBDA,#f15b5b);
+    box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;    
+}
+.monthschedule_calendar_table .saturday{
+    background: linear-gradient(#e0efff,#69adf1);
+    box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;    
+}
+.all_schedule{
+    width: 98%;
+    max-width: 98%;
+    font-size: 14px;
+    text-align: left;
+    margin-top: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+    border-left: 1px solid #b3b1b1;
+    border-right: 1px solid #b3b1b1;
+    border-top: 1px solid #b3b1b1;
+    border-bottom: 1px solid #b3b1b1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    background-color: white;
+}
+.all_schedule:hover{
+    background-color: #e0efff;
+}
+.schedule_usercheckbox_table{
+    width: 100%;
+}
+.schedule_usercheckbox_table td{
+    width: 100%;
+    font-size: 16px;
+    padding: 4px;
+}
+.schedule_usercheckbox_table td:hover{
+    background-color: #e0efff;
+}
+.month_calendar_td{
+    overflow: hidden;
+}
+.monthschedule_scroll{
+    height: 100%;
+    overflow-y: scroll;
+}
+
+/*複数行テキストボックスデザイン*/
+.form_textarea{
+    box-shadow: 0 0 0 1px #ccc inset;   /*影*/
+    margin: 0 8px;                      /*要素回りの余白*/
+    border-radius: 4px;                 /*角に丸みをつける*/
+    border: none;                       /*枠線なし*/    
+}
+/*複数行テキストボックスフォーカス時*/
+.form_textarea:focus{
+    outline: 0;                                         /*輪郭*/
+    box-shadow: 0 0 0 2px rgb(33, 150, 243) inset;      /*影*/
+}
+
+.disabled{
+    pointer-events: none;
+    background: #eae9e9;
+}
+
+.readonly_form{
+    padding-left: 10px;
+}
+
+/*スケジュール編集削除メニューボタン*/
+.schedule_menu_box{
+    position: fixed;
+    display: none;
+    box-shadow: 0 0 0 1px #ccc inset;   /*影*/
+    background-color: white;
+    margin: 0 8px;                      /*要素回りの余白*/
+    border: none;                       /*枠線なし*/    
+    max-height: 150px;
+}
+.schedule_menu_button{
+    background-color: rgb(0,0,0,0);
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.schedule_menu_button:hover{
+    background-color: #eae9e9;
+}
+
+.amount_input_table{
+    
+}
+
+.notice{
+    font-size: 14px;
+    min-width: 100%;
+    text-align: left;
+    margin-bottom: 2px;
+    background-color:rgba(0,0,0,0);
+    border: none;
+    white-space: nowrap;
+    border-radius: 4px;
+}
+.notice:hover{
+    background-color: #c4defc;
+}
+.notice_scroll{
+    overflow-y: auto;
+    overflow-x: auto;
+    height: calc(100% - 35px);
+}
+
+.error{
+    color: #ff0000;                     /*文字色*/
+}
+
