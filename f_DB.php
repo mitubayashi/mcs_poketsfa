@@ -2186,7 +2186,8 @@ function makeNotice_html(){
     $sql .= " LEFT JOIN customer_table AS t2 ON t1.customer_id = t2.customer_id ";
     $sql .= " LEFT JOIN user_table AS t3 ON t1.notice_receiver = t3.user_id ";
     $sql .= " LEFT JOIN user_table AS t4 ON t1.notice_sender = t4.user_id ";
-    $sql .= " WHERE t1.notice_receiver = '".$user_id."';";
+    $sql .= " WHERE t1.notice_receiver = '".$user_id."' ";
+    $sql .= " ORDER BY notice_id DESC; ";
     
     $con = dbconect();
     $result = $con->query($sql);
