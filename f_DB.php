@@ -1662,6 +1662,8 @@ function order_management($sql,$post){
     $pagename = $_SESSION['pagename'];
     $list_item_num = explode(',', $form_ini_array[$pagename]['list_item_num']);
     $list_item_name = explode(',', $form_ini_array[$pagename]['list_item_name']);
+    $setting_array = setting_array_get();
+    $table_num = $form_ini_array[$pagename]['table_num'];
     
     //変数
     $list_html = '';
@@ -1673,13 +1675,14 @@ function order_management($sql,$post){
     {
         $list_html .= '<th>'.$list_item_name[$i].'</th>';
     }
+    $list_html .= '<th>編集</th>';
     $list_html .= '</tr>';
     
     //一覧表内容作成処理
     $con = dbconect();
     
     //未受注A
-    $list_html .= '<tr style="background: #e0e0e0;"><td colspan="6">未受注A</td></tr>';
+    $list_html .= '<tr style="background: #e0e0e0;"><td colspan="7">未受注A</td></tr>';
     $sqlA = $sql[1]." AND t1.order_status = 1 ;";
     $result = $con->query($sqlA) or ($judge = true);
     while($result_row = $result->fetch_array(MYSQLI_ASSOC))
@@ -1690,11 +1693,29 @@ function order_management($sql,$post){
             $columns = $form_ini_array[$list_item_num[$i]]['column_name'];
             $list_html .= '<td>'.$result_row[$columns].'</td>';
         }
+        
+        //編集ボタン追加
+        $edit_id = $result_row[$form_ini_array[$table_num.'id']['column_name']];
+        if(isset($setting_array[$pagename]))
+        {
+            $hyozi_flag = $setting_array[$pagename];
+            if(in_array($result_row['user_id'],$_SESSION["hyozi_user_list"][$hyozi_flag]))
+            {
+                $disabled = '';   
+                $class = 'table_button';
+            }
+            else
+            {
+                $disabled = 'disabled';
+                $class = 'table_disabled_button';
+            }
+        }
+        $list_html .= '<td><input type="button" value="編集" onclick="open_edit_modal('.$edit_id.');" class="'.$class.'" '.$disabled.'></td>';
         $list_html .= '</tr>';
     }
     
     //未受注B
-    $list_html .= '<tr style="background: #e0e0e0;"><td colspan="6">未受注B</td></tr>';
+    $list_html .= '<tr style="background: #e0e0e0;"><td colspan="7">未受注B</td></tr>';
     $sqlB = $sql[1]." AND t1.order_status = 2 ;";
     $result = $con->query($sqlB) or ($judge = true);
     while($result_row = $result->fetch_array(MYSQLI_ASSOC))
@@ -1705,11 +1726,29 @@ function order_management($sql,$post){
             $columns = $form_ini_array[$list_item_num[$i]]['column_name'];
             $list_html .= '<td>'.$result_row[$columns].'</td>';
         }
+        
+        //編集ボタン追加
+        $edit_id = $result_row[$form_ini_array[$table_num.'id']['column_name']];
+        if(isset($setting_array[$pagename]))
+        {
+            $hyozi_flag = $setting_array[$pagename];
+            if(in_array($result_row['user_id'],$_SESSION["hyozi_user_list"][$hyozi_flag]))
+            {
+                $disabled = '';   
+                $class = 'table_button';
+            }
+            else
+            {
+                $disabled = 'disabled';
+                $class = 'table_disabled_button';
+            }
+        }
+        $list_html .= '<td><input type="button" value="編集" onclick="open_edit_modal('.$edit_id.');" class="'.$class.'" '.$disabled.'></td>';
         $list_html .= '</tr>';
     }
     
     //未受注C
-    $list_html .= '<tr style="background: #e0e0e0;"><td colspan="6">未受注C</td></tr>';
+    $list_html .= '<tr style="background: #e0e0e0;"><td colspan="7">未受注C</td></tr>';
     $sqlC = $sql[1]." AND t1.order_status = 3 ;";
     $result = $con->query($sqlC) or ($judge = true);
     while($result_row = $result->fetch_array(MYSQLI_ASSOC))
@@ -1720,8 +1759,27 @@ function order_management($sql,$post){
             $columns = $form_ini_array[$list_item_num[$i]]['column_name'];
             $list_html .= '<td>'.$result_row[$columns].'</td>';
         }
+        
+        //編集ボタン追加
+        $edit_id = $result_row[$form_ini_array[$table_num.'id']['column_name']];
+        if(isset($setting_array[$pagename]))
+        {
+            $hyozi_flag = $setting_array[$pagename];
+            if(in_array($result_row['user_id'],$_SESSION["hyozi_user_list"][$hyozi_flag]))
+            {
+                $disabled = '';   
+                $class = 'table_button';
+            }
+            else
+            {
+                $disabled = 'disabled';
+                $class = 'table_disabled_button';
+            }
+        }
+        $list_html .= '<td><input type="button" value="編集" onclick="open_edit_modal('.$edit_id.');" class="'.$class.'" '.$disabled.'></td>';
         $list_html .= '</tr>';
     }
+
     $list_html .= '</table>';
     $list_html .= '</div>';
     return $list_html;

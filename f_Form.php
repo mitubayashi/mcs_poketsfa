@@ -133,7 +133,16 @@ function makeForm($form_type){
                 case '2':
                     $form_html .= '<tr><td class="form_item_name">'.$item_name.'</td>';
                     $form_html .= '<td>';
-                    $form_html .= '<textarea name="'.$form_num[$i].'" id="'.$form_num[$i].'" rows="7" cols="60" class="form_textarea" onchange="'.$onchange.'"></textarea>';
+                    if($form_type == "sech_form_num")
+                    {
+                        $form_html .= '<input type="text" value="" class="form-text" size="'.$form_size.'" name="'.$form_num[$i].'" id="'.$form_num[$i].'" onchange="'.$onchange.'" placeholder="スペース(半角空白)で区切ってください">';
+                        $form_html .= '<label><input type="radio" value="OR" name="'.$form_num[$i].'_radio" id="'.$form_num[$i].'_radio">OR</label>　';
+                        $form_html .= '<label><input type="radio" value="AND" name="'.$form_num[$i].'_radio" id="'.$form_num[$i].'_radio">AND</label>';
+                    }
+                    else
+                    {
+                        $form_html .= '<textarea name="'.$form_num[$i].'" id="'.$form_num[$i].'" rows="7" cols="60" class="form_textarea" onchange="'.$onchange.'"></textarea>';
+                    }
                     $form_html .= '<br><a class="error" id="'.$form_num[$i].'_errormsg"></a>';
                     $form_html .= '</td></tr>'; 
                     break;

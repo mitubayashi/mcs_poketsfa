@@ -87,6 +87,25 @@
             }
             $count++;
         }
+        elseif($sech_form_type[$i] == '3')
+        {
+            $sech_value[$count]["form_num"] = $sech_form_num[$i];
+            $sech_value[$count]["field_type"] = $form_ini_array[$sech_form_num[$i]]["field_type"];
+            $sech_value[$count+1]["form_num"] = $sech_form_num[$i]."_radio";
+            $sech_value[$count+1]["field_type"] = "8";
+
+            if(isset($post[$sech_form_num[$i]]))
+            {
+                $sech_value[$count]["value"] = $post[$sech_form_num[$i]];
+                $sech_value[$count+1]["value"] = $post[$sech_form_num[$i]."_radio"];
+            }
+            else
+            {
+                $sech_value[$count]["value"] = "";         
+                $sech_value[$count+1]["value"] = "OR";
+            }    
+            $count = $count + 2;
+        }
         else
         {
             $sech_value[$count]["form_num"] = $sech_form_num[$i];

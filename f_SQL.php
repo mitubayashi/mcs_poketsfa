@@ -115,6 +115,20 @@ function List_itemSQL($post,$pagename){
                 }
             }                 
         }
+        elseif($sech_form_type[$i] == "3")
+        {
+            if(isset($post[$sech_form_num[$i]]) && $post[$sech_form_num[$i]] != "")
+            {
+                $keywords = explode(' ', $post[$sech_form_num[$i]]);
+                $keywordCondition = [];
+                foreach($keywords as $keyword)
+                {
+                    $keywordCondition[] = $column_name.' LIKE "%' . $keyword . '%"';
+                }
+                $keywordCondition = implode(' '.$post[$sech_form_num[$i]."_radio"].' ', $keywordCondition);
+                $where .= " AND ( ".$keywordCondition." ) ";
+            }
+        }
     }
     $sql[0] .= $where;
     $sql[1] .= $where;
