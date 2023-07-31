@@ -1683,7 +1683,7 @@ function order_management($sql,$post){
     
     //未受注A
     $list_html .= '<tr style="background: #e0e0e0;"><td colspan="7">未受注A</td></tr>';
-    $sqlA = $sql[1]." AND t1.order_status = 1 ;";
+    $sqlA = $sql[1]." AND t1.order_status = 1 ORDER BY matter_id DESC;";
     $result = $con->query($sqlA) or ($judge = true);
     while($result_row = $result->fetch_array(MYSQLI_ASSOC))
     {
@@ -1716,7 +1716,7 @@ function order_management($sql,$post){
     
     //未受注B
     $list_html .= '<tr style="background: #e0e0e0;"><td colspan="7">未受注B</td></tr>';
-    $sqlB = $sql[1]." AND t1.order_status = 2 ;";
+    $sqlB = $sql[1]." AND t1.order_status = 2 ORDER BY matter_id DESC;";
     $result = $con->query($sqlB) or ($judge = true);
     while($result_row = $result->fetch_array(MYSQLI_ASSOC))
     {
@@ -1749,7 +1749,7 @@ function order_management($sql,$post){
     
     //未受注C
     $list_html .= '<tr style="background: #e0e0e0;"><td colspan="7">未受注C</td></tr>';
-    $sqlC = $sql[1]." AND t1.order_status = 3 ;";
+    $sqlC = $sql[1]." AND t1.order_status = 3 ORDER BY matter_id DESC;";
     $result = $con->query($sqlC) or ($judge = true);
     while($result_row = $result->fetch_array(MYSQLI_ASSOC))
     {
